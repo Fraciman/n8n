@@ -1,0 +1,166 @@
+{
+  "name": "TEMP - check WhatsApp account link",
+  "nodes": [
+    {
+      "id": "e15a9738-b534-4c38-91a4-27fd03efa9f4",
+      "name": "Start",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tmp-waba-check-7f3c1",
+        "responseMode": "onReceived"
+      },
+      "webhookId": "c00d3859-b531-4af3-abf4-7372662b1aae"
+    },
+    {
+      "id": "41e25900-c950-4fb9-9fdd-211b0189b31f",
+      "name": "Account info",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://graph.facebook.com/v26.0/me?fields=id,name",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "credentials": {
+        "whatsAppApi": {
+          "id": "zrwvQPoh5xZxasio",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "id": "b258a9ee-2c11-45f8-a4ac-00dc3fc9bb27",
+      "name": "Phone numbers",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://graph.facebook.com/v25.0/1489660046311440/phone_numbers?fields=id,display_phone_number,verified_name,status,name_status,platform_type,code_verification_status",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "executeOnce": true,
+      "credentials": {
+        "whatsAppApi": {
+          "id": "zrwvQPoh5xZxasio",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "id": "99da5187-8bdf-4355-9b27-720974967b7d",
+      "name": "Number health",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        200,
+        300
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.ycloud.com/v2/whatsapp/inboundMessages/wamid.HBgTTVkuMTA0Mzg5Mzg4ODY2NDc4OBUUABIYIEFDMDQwNTY5QkE2N0I5QzUwNTJDQTgwMkU4OTJBREQxAA==/typingIndicator",
+        "authentication": "genericCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "fullResponse": true
+            }
+          }
+        },
+        "sendBody": false,
+        "specifyBody": "json",
+        "jsonBody": "{\"from\":\"+601126298187\",\"to\":\"+601121164719\",\"type\":\"text\",\"text\":{\"body\":\"Twodazzle bot setup test 3 (via YCloud)\"}}",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "credentials": {
+        "whatsAppApi": {
+          "id": "zrwvQPoh5xZxasio",
+          "name": "WhatsApp account"
+        },
+        "httpHeaderAuth": {
+          "id": "y9aSvANOYtWH2O6j",
+          "name": "Header Auth account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Number health",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Number health": {
+      "main": [
+        [
+          {
+            "node": "Account info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Account info": {
+      "main": [
+        [
+          {
+            "node": "Phone numbers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "triggerCount": 0,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  }
+}

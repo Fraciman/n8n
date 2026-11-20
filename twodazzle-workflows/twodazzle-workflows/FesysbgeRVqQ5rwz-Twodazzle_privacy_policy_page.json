@@ -1,0 +1,48 @@
+{
+  "name": "Twodazzle privacy policy page",
+  "nodes": [
+    {
+      "id": "123899a4-bf53-4c48-b7e1-6dc26e2ab9da",
+      "name": "Privacy policy page",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "twodazzle-privacy-policy",
+        "responseMode": "onReceived",
+        "options": {
+          "responseData": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Privacy Policy | Twodazzle</title>\n<meta name=\"description\" content=\"How Twodazzle handles personal data, including messages sent to our WhatsApp business number.\">\n<style>\n  :root { --bg: #ffffff; --text: #1d1d1f; --muted: #5f6368; --line: #e3e3e6; --accent: #5b3df5; }\n  @media (prefers-color-scheme: dark) { :root { --bg: #121214; --text: #ececf1; --muted: #a1a1aa; --line: #2c2c31; --accent: #a594ff; } }\n  * { box-sizing: border-box; }\n  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif; }\n  main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }\n  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 4px; }\n  h2 { font-size: 1.15rem; margin: 28px 0 6px; }\n  p, li { margin: 6px 0; }\n  ul { padding-left: 1.2em; }\n  a { color: var(--accent); }\n  .meta { color: var(--muted); margin: 0 0 20px; }\n  .lang { margin: 0 0 8px; }\n  hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }\n</style>\n</head>\n<body>\n<main>\n\n<section id=\"en\" lang=\"en\">\n<p class=\"lang\"><a href=\"#ms\">Bahasa Malaysia</a></p>\n<h1>Privacy Policy</h1>\n<p class=\"meta\">Twodazzle · Last updated 2 November 2026</p>\n\n<h2>Who we are</h2>\n<p>Twodazzle (Twodazzle Studio) is a web design and development studio in Selangor, Malaysia. Contact us at <a href=\"mailto:hello@twodazzle.com\">hello@twodazzle.com</a> or on WhatsApp at +60 11-2629 8187.</p>\n<p>This policy explains how we handle your personal data when you contact us, including through our WhatsApp business number.</p>\n\n<h2>What we collect</h2>\n<ul>\n  <li>Your WhatsApp phone number or WhatsApp user ID, and your WhatsApp profile name.</li>\n  <li>The messages you send us and our replies.</li>\n  <li>Any details you choose to share about your business or project.</li>\n</ul>\n\n<h2>How we use it</h2>\n<ul>\n  <li>To answer your questions and enquiries.</li>\n  <li>To prepare quotations and follow up on projects you ask about.</li>\n  <li>To remember the context of your conversation so our replies make sense.</li>\n</ul>\n<p>We do not sell your personal data or use it for advertising.</p>\n\n<h2>Automated replies</h2>\n<p>Some WhatsApp replies are written automatically by an AI assistant and may contain mistakes. Our team confirms prices, quotations and project details. If you would rather speak to a person, tell us in the chat or email us.</p>\n\n<h2>Service providers</h2>\n<p>We use these providers to run this service. They process data on our behalf:</p>\n<ul>\n  <li>Meta Platforms (WhatsApp Business Platform), to send and receive messages.</li>\n  <li>n8n, to process messages in our automation workflow.</li>\n  <li>OpenAI (through n8n), to draft replies based on your message.</li>\n</ul>\n<p>These providers may process data outside Malaysia. We share only what is needed to provide this service.</p>\n\n<h2>How long we keep it</h2>\n<p>We keep conversation records only as long as we need them to respond to you and for our business records, and then delete them.</p>\n\n<h2>Your rights</h2>\n<p>Under Malaysia's Personal Data Protection Act 2010, you can ask to access or correct your personal data, withdraw your consent, or ask us to delete it. Email <a href=\"mailto:hello@twodazzle.com\">hello@twodazzle.com</a> with your WhatsApp number. We will respond within 21 days.</p>\n\n<h2>Security</h2>\n<p>We take reasonable steps to protect your data. Please do not send passwords or payment card details over WhatsApp.</p>\n\n<h2>Changes</h2>\n<p>We may update this policy. The date at the top shows the latest version.</p>\n</section>\n\n<hr>\n\n<section id=\"ms\" lang=\"ms\">\n<p class=\"lang\"><a href=\"#en\">English</a></p>\n<h1>Dasar Privasi</h1>\n<p class=\"meta\">Twodazzle · Kemas kini terakhir 2 November 2026</p>\n\n<h2>Siapa kami</h2>\n<p>Twodazzle (Twodazzle Studio) ialah studio reka bentuk dan pembangunan laman web di Selangor, Malaysia. Hubungi kami di <a href=\"mailto:hello@twodazzle.com\">hello@twodazzle.com</a> atau melalui WhatsApp di +60 11-2629 8187.</p>\n<p>Dasar ini menerangkan cara kami mengendalikan data peribadi anda apabila anda menghubungi kami, termasuk melalui nombor WhatsApp perniagaan kami.</p>\n\n<h2>Data yang kami kumpul</h2>\n<ul>\n  <li>Nombor telefon atau ID pengguna WhatsApp anda, dan nama profil WhatsApp anda.</li>\n  <li>Mesej yang anda hantar kepada kami dan balasan kami.</li>\n  <li>Sebarang maklumat yang anda pilih untuk kongsi tentang perniagaan atau projek anda.</li>\n</ul>\n\n<h2>Cara kami menggunakannya</h2>\n<ul>\n  <li>Untuk menjawab soalan dan pertanyaan anda.</li>\n  <li>Untuk menyediakan sebut harga dan membuat susulan tentang projek yang anda tanyakan.</li>\n  <li>Untuk mengingati konteks perbualan supaya balasan kami relevan.</li>\n</ul>\n<p>Kami tidak menjual data peribadi anda atau menggunakannya untuk pengiklanan.</p>\n\n<h2>Balasan automatik</h2>\n<p>Sesetengah balasan WhatsApp ditulis secara automatik oleh pembantu AI dan mungkin mengandungi kesilapan. Pasukan kami akan mengesahkan harga, sebut harga dan butiran projek. Jika anda lebih suka bercakap dengan wakil kami, beritahu kami dalam chat atau hantarkan e-mel kepada kami.</p>\n\n<h2>Pembekal perkhidmatan</h2>\n<p>Kami menggunakan pembekal berikut untuk menjalankan perkhidmatan ini. Mereka memproses data bagi pihak kami:</p>\n<ul>\n  <li>Meta Platforms (Platform Perniagaan WhatsApp), untuk menghantar dan menerima mesej.</li>\n  <li>n8n, untuk memproses mesej dalam aliran kerja automasi kami.</li>\n  <li>OpenAI (melalui n8n), untuk merangka balasan berdasarkan mesej anda.</li>\n</ul>\n<p>Pembekal ini mungkin memproses data di luar Malaysia. Kami hanya berkongsi maklumat yang diperlukan untuk menyediakan perkhidmatan ini.</p>\n\n<h2>Tempoh penyimpanan</h2>\n<p>Kami menyimpan rekod perbualan hanya selama yang diperlukan untuk membalas anda dan untuk rekod perniagaan kami, kemudian kami memadamkannya.</p>\n\n<h2>Hak anda</h2>\n<p>Di bawah Akta Perlindungan Data Peribadi 2010, anda boleh meminta untuk mengakses atau membetulkan data peribadi anda, menarik balik persetujuan anda, atau meminta kami memadamkannya. Hantarkan e-mel ke <a href=\"mailto:hello@twodazzle.com\">hello@twodazzle.com</a> bersama nombor WhatsApp anda. Kami akan membalas dalam tempoh 21 hari.</p>\n\n<h2>Keselamatan</h2>\n<p>Kami mengambil langkah yang munasabah untuk melindungi data anda. Sila jangan hantar kata laluan atau butiran kad pembayaran melalui WhatsApp.</p>\n\n<h2>Perubahan</h2>\n<p>Kami mungkin mengemas kini dasar ini. Tarikh di bahagian atas menunjukkan versi terkini.</p>\n</section>\n\n</main>\n</body>\n</html>",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "public, max-age=3600"
+              }
+            ]
+          }
+        }
+      },
+      "webhookId": "2a8567e8-c17f-4bfb-a747-dd8c0fe86910"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "triggerCount": 1,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  }
+}

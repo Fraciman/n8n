@@ -1,0 +1,117 @@
+{
+  "name": "TEMP - bot diagnostics",
+  "nodes": [
+    {
+      "id": "8f4901bc-b48c-4104-bede-a36adf10320c",
+      "name": "Start",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "tmp-bot-diagnostics-4e2a9",
+        "responseMode": "onReceived"
+      },
+      "webhookId": "07bc22f2-1369-4176-b3a1-f70ae16f8795"
+    },
+    {
+      "id": "5b52ce94-be0d-459c-8864-0578296a99db",
+      "name": "Subscribed apps",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        224,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://graph.facebook.com/v26.0/me?fields=id,name",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "credentials": {
+        "whatsAppApi": {
+          "id": "zrwvQPoh5xZxasio",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "id": "50a83cec-9284-4b78-80f9-cb059f541449",
+      "name": "Number status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        448,
+        0
+      ],
+      "parameters": {
+        "method": "GET",
+        "url": "https://graph.facebook.com/v26.0/1417602374763250?fields=display_phone_number,status,is_on_biz_app,platform_type,name_status,quality_rating,messaging_limit_tier,health_status",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true,
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "executeOnce": true,
+      "credentials": {
+        "whatsAppApi": {
+          "id": "zrwvQPoh5xZxasio",
+          "name": "WhatsApp account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Subscribed apps",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Subscribed apps": {
+      "main": [
+        [
+          {
+            "node": "Number status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": true
+  },
+  "staticData": null,
+  "pinData": {},
+  "triggerCount": 0,
+  "meta": {
+    "aiBuilderAssisted": true,
+    "builderVariant": "mcp"
+  }
+}
